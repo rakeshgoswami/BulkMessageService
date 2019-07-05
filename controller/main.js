@@ -85,7 +85,7 @@ exports.getUserList = function(req, res) {
 
 
 exports.createUserPassword = function(req, res) {
-    console.log('token is this', req.query);
+    // console.log('token is this', req.query);
     registrationModel.findOne({ token: req.query.token }, { password: 0 }, function(err, result) {
         if (result == null) {
             res.status(498).json({ message: "Sorry! Token is expired or not valid" });
